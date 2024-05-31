@@ -22,15 +22,19 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.projects.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, Project $project)
     {
-        //
+        $form_data = $request->all();
+        $form_data['slug'] = Project::generateSlug(Project::class, $form_data['title']);
+        $project->create($form_data);
+             return redirect()->route('admin.projects.index')->with('message', 'Nuovo progetto creato');
+
     }
 
     /**

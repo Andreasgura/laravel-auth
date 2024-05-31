@@ -1,7 +1,10 @@
 @extends('layouts.app')
 @section('content')
 <section class="container">
-    <h1>I tuoi progetti</h1>
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h1>I tuoi progetti</h1>
+        <a href="{{ route('admin.projects.create') }}" class="btn btn-success">Create</a>
+    </div>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -33,7 +36,7 @@
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Delete</button>
-                </tr>
+            </tr>
             @endforeach
         </tbody>
     </table>
