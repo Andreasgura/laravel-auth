@@ -24,7 +24,7 @@ class StoreProjectRequest extends FormRequest
         return [
             "title"=> "required|string|max:50",
             "description"=> "required|text",
-            "screenshot"=> "required|url|max:200",
+            "screenshot"=> "required|image|max:200",
             "link_github"=> "required|url|max:200",
             "link_website"=> "required|url|max:200",
         ];
