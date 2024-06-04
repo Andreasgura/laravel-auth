@@ -3,7 +3,7 @@
 
 <section class="container">
 
-<form action="{{route('admin.projects.store')}}" method="POST">
+<form action="{{route('admin.projects.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
             <label for="title" class="form-label">Inserisci un titolo</label>
@@ -23,7 +23,7 @@
 
           <div class="mb-3">
             <label for="screenshot" class="form-label">Inserisci un screenshot</label>
-            <input type="text" class="form-control @error('screenshot') is-invalid @enderror " id="screenshot" aria-describedby="screenshotHelp" name="screenshot" value="{{ old('screenshot') }}" >
+            <input type="image" class="form-control @error('screenshot') is-invalid @enderror " id="screenshot" aria-describedby="screenshotHelp" name="screenshot" value="{{ old('screenshot') }}" >
             @error('screenshot')
             <div class="alert alert-danger">{{ $message }}</div>
             @enderror
